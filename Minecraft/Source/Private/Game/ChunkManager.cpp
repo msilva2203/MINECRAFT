@@ -26,8 +26,6 @@ void UChunkManager::InitObject()
     {
         for (int z = 0; z < CHUNK_COUNT; z++)
         {
-            //if (z == 3 && i == 3) break;
-            
             Chunk* NewChunk = new Chunk(this, { x, z });
             NewChunk->InitObject();
             

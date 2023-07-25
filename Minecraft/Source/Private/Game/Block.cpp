@@ -2,7 +2,8 @@
 
 #include "Rendering/Renderer.h"
 
-Block::Block()
+Block::Block() : 
+    BlockType(EBlockType::DIRT)
 {
 }
 
@@ -82,5 +83,5 @@ bool Block::HasBeenUpdated()
 
 bool Block::IsSolid() const
 {
-    return true;
+    return BlockType != EBlockType::VOID;
 }

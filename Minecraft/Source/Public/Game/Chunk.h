@@ -42,7 +42,8 @@ public:
     
 private:
     // X - Y - Z
-    Block Blocks[CHUNK_SIZE][CHUNK_HEIGHT][CHUNK_SIZE];
+    Block Blocks[CHUNK_SIZE * CHUNK_HEIGHT * CHUNK_SIZE];
+    //Block Blocks[CHUNK_SIZE][CHUNK_HEIGHT][CHUNK_SIZE];
     glm::ivec2 ChunkPosition;
     
     std::vector<unsigned int> Vertex;

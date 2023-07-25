@@ -13,7 +13,6 @@ Chunk::Chunk(UChunkManager* ChunkManager, glm::ivec2 position) :
     Manager(ChunkManager)
 {
     SetEntityLocation({ position.x * 16.0f, 0.0f, position.y * 16.0f });
-    SetEntityRotation({0.0f, 0.0f, 0.0f});
 }
 
 Chunk::~Chunk()
@@ -27,6 +26,19 @@ void Chunk::InitObject()
     vao = new VertexArray;
     vbo = new VertexBuffer(nullptr, 0);
     ibo = new IndexBuffer(nullptr, 0);
+
+    for (int x = 0; x < CHUNK_SIZE; x++)
+    {
+        for (int z = 0; z < CHUNK_SIZE; z++)
+        {
+            unsigned int TerrainHeight = CHUNK_HEIGHT - (int)(((glm::sin(x) + 1.0f) / 2.0f) * 5.0f);
+
+            for (int y = CHUNK_HEIGHT - 1; y > TerrainHeight; y--)
+            {
+                GetBlock({ x, y, z }).SetBlockType(EBlockType::VOID);
+            }
+        }
+    }
 }
 
 void Chunk::TerminateObject()
@@ -57,18 +69,25 @@ void Chunk::UpdateChunk()
     IndiceCount = 0;
     
     for (int x = 0; x < CHUNK_SIZE; x++)
+    {
         for (int y = 0; y < CHUNK_HEIGHT; y++)
+        {
             for (int z = 0; z < CHUNK_SIZE; z++)
             {
-                glm::ivec3 location { x, y, z};
-                
-                UpdateBlock(location, EDirection::X_NEG);
-                UpdateBlock(location, EDirection::X_POS);
-                UpdateBlock(location, EDirection::Y_NEG);
-                UpdateBlock(location, EDirection::Y_POS);
-                UpdateBlock(location, EDirection::Z_NEG);
-                UpdateBlock(location, EDirection::Z_POS);
+                glm::ivec3 location{ x, y, z };
+
+                if (GetBlock(location).IsSolid())
+                {
+                    UpdateBlock(location, EDirection::X_NEG);
+                    UpdateBlock(location, EDirection::X_POS);
+                    UpdateBlock(location, EDirection::Y_NEG);
+                    UpdateBlock(location, EDirection::Y_POS);
+                    UpdateBlock(location, EDirection::Z_NEG);
+                    UpdateBlock(location, EDirection::Z_POS);
+                }
             }
+        }
+    }
     
     vao->Bind();
     vbo->BufferData(Vertex.data(), Vertex.size() * sizeof(GLuint));
@@ -90,7 +109,8 @@ void Chunk::UpdateChunk()
 
 Block& Chunk::GetBlock(const glm::ivec3& location)
 {
-    return Blocks[location.x][location.y][location.z];
+    return Blocks[location.x * CHUNK_HEIGHT * CHUNK_SIZE + location.y * CHUNK_SIZE + location.z];
+    //return Blocks[location.x][location.y][location.z];
 }
 
 void Chunk::UpdateBlock(const glm::ivec3& location, const EDirection Direction)

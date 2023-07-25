@@ -4,10 +4,16 @@
 
 #include "Game/ChunkManager.h"
 
-
-class Block : public AEntity
+enum class EBlockType
 {
-    typedef AEntity Super;
+    VOID = 0,
+    DIRT
+};
+
+
+class Block : public UObject
+{
+    typedef UObject Super;
 public:
     Block();
     ~Block();
@@ -19,15 +25,14 @@ public:
     virtual bool IsTickable() const override;
 
 public:
-    void SetChunkLocation(const glm::vec3 NewLocation) { ChunkLocation = NewLocation; }
-    glm::vec3 GetChunkLocation() const { return ChunkLocation; }
+    void SetBlockType(const EBlockType NewType) { BlockType = NewType; }
     void SetUpdatedDirection(const bool bNewValue, const EDirection Direction);
     bool HasDirectionBeenUpdated(const EDirection Direction);
     bool HasBeenUpdated();
     bool IsSolid() const;
 
 private:
-    glm::vec3 ChunkLocation;
+    EBlockType BlockType;
 
     bool bUpdatedX_NEG = false;
     bool bUpdatedX_POS = false;

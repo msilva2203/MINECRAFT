@@ -13,9 +13,9 @@ class Chunk;
 
 enum class EDirection
 {
-    X_NEG, X_POS,
-    Y_NEG, Y_POS,
-    Z_NEG, Z_POS
+    X_NEG = 0, X_POS = 1,
+    Y_NEG = 2, Y_POS = 3,
+    Z_NEG = 4, Z_POS = 5
 };
 
 class UChunkManager : public UObject
