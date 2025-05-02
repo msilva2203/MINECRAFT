@@ -29,7 +29,7 @@ void IndexBuffer::Unbind() const
     glCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0))
 }
 
-void IndexBuffer::BufferData(const unsigned* data, unsigned count)
+void IndexBuffer::BufferData(const unsigned int* data, unsigned int count)
 {
     ASSERT(sizeof(unsigned int) == sizeof(GLuint))
 

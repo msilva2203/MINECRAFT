@@ -18,7 +18,7 @@ public:
     ~Shader();
 
     void Bind() const;
-    void Unbind();
+    void Unbind() const;
 
 public:
     // Uniforms

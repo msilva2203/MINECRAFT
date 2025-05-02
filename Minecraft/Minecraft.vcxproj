@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|Win32">
+      <Configuration>Distribution</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FEA1E9E8-6A0C-9E5F-B34A-4F051FF47BB4}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Minecraft</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Distribution|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Debug-windows-x86\Minecraft\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86\Minecraft\</IntDir>
+    <TargetName>Minecraft</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Release-windows-x86\Minecraft\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86\Minecraft\</IntDir>
+    <TargetName>Minecraft</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Distribution-windows-x86\Minecraft\</OutDir>
+    <IntDir>..\bin-int\Distribution-windows-x86\Minecraft\</IntDir>
+    <TargetName>Minecraft</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>MINECRAFT_PLATFORM_WINDOWS;GLEW_STATIC;WIN32;MINECRAFT_CONFIG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source\Vendor;Source\Public;..\Dependencies\GLEW\include;..\Dependencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Dependencies\GLFW\lib-vc2019;..\Dependencies\GLEW\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>MINECRAFT_PLATFORM_WINDOWS;GLEW_STATIC;WIN32;MINECRAFT_CONFIG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source\Vendor;Source\Public;..\Dependencies\GLEW\include;..\Dependencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Dependencies\GLFW\lib-vc2019;..\Dependencies\GLEW\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>MINECRAFT_PLATFORM_WINDOWS;GLEW_STATIC;WIN32;MINECRAFT_CONFIG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source\Vendor;Source\Public;..\Dependencies\GLEW\include;..\Dependencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Dependencies\GLFW\lib-vc2019;..\Dependencies\GLEW\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Public\Application.h" />
+    <ClInclude Include="Source\Public\Entity.h" />
+    <ClInclude Include="Source\Public\Framework\Camera.h" />
+    <ClInclude Include="Source\Public\Framework\Debugger.h" />
+    <ClInclude Include="Source\Public\Framework\GameInstance.h" />
+    <ClInclude Include="Source\Public\Framework\Input.h" />
+    <ClInclude Include="Source\Public\Framework\Pawn.h" />
+    <ClInclude Include="Source\Public\Framework\PlayerController.h" />
+    <ClInclude Include="Source\Public\Framework\TimerManager.h" />
+    <ClInclude Include="Source\Public\Framework\World.h" />
+    <ClInclude Include="Source\Public\Game\Block.h" />
+    <ClInclude Include="Source\Public\Game\Chunk.h" />
+    <ClInclude Include="Source\Public\Game\ChunkManager.h" />
+    <ClInclude Include="Source\Public\Object.h" />
+    <ClInclude Include="Source\Public\Rendering\IndexBuffer.h" />
+    <ClInclude Include="Source\Public\Rendering\Renderer.h" />
+    <ClInclude Include="Source\Public\Rendering\Shader.h" />
+    <ClInclude Include="Source\Public\Rendering\Texture.h" />
+    <ClInclude Include="Source\Public\Rendering\VertexArray.h" />
+    <ClInclude Include="Source\Public\Rendering\VertexBuffer.h" />
+    <ClInclude Include="Source\Public\Rendering\VertexBufferLayout.h" />
+    <ClInclude Include="Source\Public\Statics\GameplayStatics.h" />
+    <ClInclude Include="Source\Public\Statics\Globals.h" />
+    <ClInclude Include="Source\Public\Statics\Math.h" />
+    <ClInclude Include="Source\Public\Statics\Types.h" />
+    <ClInclude Include="Source\Public\Tests\LiminalTriangle.h" />
+    <ClInclude Include="Source\Public\Tests\PartyTriangle.h" />
+    <ClInclude Include="Source\Public\Tests\RotatingCube.h" />
+    <ClInclude Include="Source\Vendor\glm\simd\common.h" />
+    <ClInclude Include="Source\Vendor\glm\simd\exponential.h" />
+    <ClInclude Include="Source\Vendor\glm\simd\geometric.h" />
+    <ClInclude Include="Source\Vendor\glm\simd\integer.h" />
+    <ClInclude Include="Source\Vendor\glm\simd\matrix.h" />
+    <ClInclude Include="Source\Vendor\glm\simd\neon.h" />
+    <ClInclude Include="Source\Vendor\glm\simd\packing.h" />
+    <ClInclude Include="Source\Vendor\glm\simd\platform.h" />
+    <ClInclude Include="Source\Vendor\glm\simd\trigonometric.h" />
+    <ClInclude Include="Source\Vendor\glm\simd\vector_relational.h" />
+    <ClInclude Include="Source\Vendor\stb\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Private\Application.cpp" />
+    <ClCompile Include="Source\Private\Entity.cpp" />
+    <ClCompile Include="Source\Private\Framework\Camera.cpp" />
+    <ClCompile Include="Source\Private\Framework\Debugger.cpp" />
+    <ClCompile Include="Source\Private\Framework\GameInstance.cpp" />
+    <ClCompile Include="Source\Private\Framework\Input.cpp" />
+    <ClCompile Include="Source\Private\Framework\Pawn.cpp" />
+    <ClCompile Include="Source\Private\Framework\PlayerController.cpp" />
+    <ClCompile Include="Source\Private\Framework\TimerManager.cpp" />
+    <ClCompile Include="Source\Private\Framework\World.cpp" />
+    <ClCompile Include="Source\Private\Game\Block.cpp" />
+    <ClCompile Include="Source\Private\Game\Chunk.cpp" />
+    <ClCompile Include="Source\Private\Game\ChunkManager.cpp" />
+    <ClCompile Include="Source\Private\Object.cpp" />
+    <ClCompile Include="Source\Private\Rendering\IndexBuffer.cpp" />
+    <ClCompile Include="Source\Private\Rendering\Renderer.cpp" />
+    <ClCompile Include="Source\Private\Rendering\Shader.cpp" />
+    <ClCompile Include="Source\Private\Rendering\Texture.cpp" />
+    <ClCompile Include="Source\Private\Rendering\VertexArray.cpp" />
+    <ClCompile Include="Source\Private\Rendering\VertexBuffer.cpp" />
+    <ClCompile Include="Source\Private\Statics\GameplayStatics.cpp" />
+    <ClCompile Include="Source\Private\Statics\Math.cpp" />
+    <ClCompile Include="Source\Private\Tests\LiminalTriangle.cpp" />
+    <ClCompile Include="Source\Private\Tests\PartyTriangle.cpp" />
+    <ClCompile Include="Source\Private\Tests\RotatingCube.cpp" />
+    <ClCompile Include="Source\Vendor\glm\detail\glm.cpp" />
+    <ClCompile Include="Source\Vendor\stb\stb_image.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

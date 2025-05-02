@@ -49,10 +49,12 @@ void UWorld::Update(float CurrentTime)
 
     UDebugger::GetDebugger()->Tick(DeltaTime);
 
-    for(std::vector<UObject*>::iterator it = WorldObjects.begin(); it < WorldObjects.end(); it++)
+    for(int Index = 0; Index < WorldObjects.size(); Index++)
     {
-        if ((*it)->IsTickable() && !(*it)->Terminated())
-            (*it)->Tick(DeltaTime);
+        UObject* Object = WorldObjects[Index];
+
+        if (Object->IsTickable() && !Object->Terminated())
+            Object->Tick(DeltaTime);
     }
 }
 

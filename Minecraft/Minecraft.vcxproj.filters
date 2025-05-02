@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Private">
+      <UniqueIdentifier>{001F8D23-6CFE-0BBF-7516-9795E1747220}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Framework">
+      <UniqueIdentifier>{7D5B82EF-E971-8085-32E9-0BA79E3E510D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Game">
+      <UniqueIdentifier>{A99813B7-95FB-A25B-3E81-DB112AC36EDE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Rendering">
+      <UniqueIdentifier>{4DA8B339-B9BE-B1CF-0236-3DF16E8B8257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Statics">
+      <UniqueIdentifier>{8A0027DD-F68B-94A1-FF9C-17966BA7F0A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Tests">
+      <UniqueIdentifier>{C239749A-2EFA-EFD0-F734-394E63B434AD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{8480F8CA-7022-23A1-59DD-36F5451EAAF1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Framework">
+      <UniqueIdentifier>{017228FD-ED6A-474F-169D-2CD402F5265B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Game">
+      <UniqueIdentifier>{AD8CAC31-1942-2527-A236-1FFE0EEB1B2B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Rendering">
+      <UniqueIdentifier>{D1BE5947-BDB7-7899-E6E9-5D1ED24158A5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Statics">
+      <UniqueIdentifier>{0EA68DF6-FA73-81FC-E307-F222CF745D61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Tests">
+      <UniqueIdentifier>{46AE2B68-3211-BB0C-DB96-F3C2C7D8868F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vendor">
+      <UniqueIdentifier>{935FDCD7-7F01-07AE-68BC-1A0254FD8DFE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vendor\glm">
+      <UniqueIdentifier>{627B7327-4E33-B574-B73A-8ED0A3115065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vendor\glm\detail">
+      <UniqueIdentifier>{E490280D-50A7-26A3-991E-B2C40574F72A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vendor\glm\simd">
+      <UniqueIdentifier>{FE44059A-6AD0-725E-73E1-F552DFEBCE5E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vendor\stb">
+      <UniqueIdentifier>{6BAF7327-5767-B574-C06E-8ED0AC455065}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Public\Application.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Entity.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Framework\Camera.h">
+      <Filter>Public\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Framework\Debugger.h">
+      <Filter>Public\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Framework\GameInstance.h">
+      <Filter>Public\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Framework\Input.h">
+      <Filter>Public\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Framework\Pawn.h">
+      <Filter>Public\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Framework\PlayerController.h">
+      <Filter>Public\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Framework\TimerManager.h">
+      <Filter>Public\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Framework\World.h">
+      <Filter>Public\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Game\Block.h">
+      <Filter>Public\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Game\Chunk.h">
+      <Filter>Public\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Game\ChunkManager.h">
+      <Filter>Public\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Object.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Rendering\IndexBuffer.h">
+      <Filter>Public\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Rendering\Renderer.h">
+      <Filter>Public\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Rendering\Shader.h">
+      <Filter>Public\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Rendering\Texture.h">
+      <Filter>Public\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Rendering\VertexArray.h">
+      <Filter>Public\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Rendering\VertexBuffer.h">
+      <Filter>Public\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Rendering\VertexBufferLayout.h">
+      <Filter>Public\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Statics\GameplayStatics.h">
+      <Filter>Public\Statics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Statics\Globals.h">
+      <Filter>Public\Statics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Statics\Math.h">
+      <Filter>Public\Statics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Statics\Types.h">
+      <Filter>Public\Statics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Tests\LiminalTriangle.h">
+      <Filter>Public\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Tests\PartyTriangle.h">
+      <Filter>Public\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Tests\RotatingCube.h">
+      <Filter>Public\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\glm\simd\common.h">
+      <Filter>Vendor\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\glm\simd\exponential.h">
+      <Filter>Vendor\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\glm\simd\geometric.h">
+      <Filter>Vendor\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\glm\simd\integer.h">
+      <Filter>Vendor\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\glm\simd\matrix.h">
+      <Filter>Vendor\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\glm\simd\neon.h">
+      <Filter>Vendor\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\glm\simd\packing.h">
+      <Filter>Vendor\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\glm\simd\platform.h">
+      <Filter>Vendor\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\glm\simd\trigonometric.h">
+      <Filter>Vendor\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\glm\simd\vector_relational.h">
+      <Filter>Vendor\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vendor\stb\stb_image.h">
+      <Filter>Vendor\stb</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Private\Application.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Entity.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Framework\Camera.cpp">
+      <Filter>Private\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Framework\Debugger.cpp">
+      <Filter>Private\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Framework\GameInstance.cpp">
+      <Filter>Private\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Framework\Input.cpp">
+      <Filter>Private\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Framework\Pawn.cpp">
+      <Filter>Private\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Framework\PlayerController.cpp">
+      <Filter>Private\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Framework\TimerManager.cpp">
+      <Filter>Private\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Framework\World.cpp">
+      <Filter>Private\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Game\Block.cpp">
+      <Filter>Private\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Game\Chunk.cpp">
+      <Filter>Private\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Game\ChunkManager.cpp">
+      <Filter>Private\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Object.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Rendering\IndexBuffer.cpp">
+      <Filter>Private\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Rendering\Renderer.cpp">
+      <Filter>Private\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Rendering\Shader.cpp">
+      <Filter>Private\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Rendering\Texture.cpp">
+      <Filter>Private\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Rendering\VertexArray.cpp">
+      <Filter>Private\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Rendering\VertexBuffer.cpp">
+      <Filter>Private\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Statics\GameplayStatics.cpp">
+      <Filter>Private\Statics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Statics\Math.cpp">
+      <Filter>Private\Statics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Tests\LiminalTriangle.cpp">
+      <Filter>Private\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Tests\PartyTriangle.cpp">
+      <Filter>Private\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Tests\RotatingCube.cpp">
+      <Filter>Private\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vendor\glm\detail\glm.cpp">
+      <Filter>Vendor\glm\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vendor\stb\stb_image.cpp">
+      <Filter>Vendor\stb</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp" />
+  </ItemGroup>
+</Project>

@@ -8,7 +8,9 @@
 URenderer* GRenderer;
 
 
-URenderer::URenderer()
+URenderer::URenderer() :
+    Window(nullptr),
+    CurrentCamera(nullptr)
 {
     CurrentVideoMode.Width = 1280;
     CurrentVideoMode.Height = 720;
@@ -204,6 +206,9 @@ void URenderer::Draw(const VertexArray& va, const IndexBuffer& ib, const Shader&
     ib.Bind();
     shader.Bind();
     glCall(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr))
+    va.Unbind();
+    ib.Unbind();
+    shader.Unbind();
 }
 
 void URenderer::GetWindowSize(int& Width, int& Height)

@@ -46,9 +46,9 @@ void UChunkManager::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    for (auto& Chunk : Chunks)
+    for (int Index = 0; Index < Chunks.size(); Index++)
     {
-        Chunk->Tick(DeltaTime);
+        Chunks[Index]->Tick(DeltaTime);
     }
 }
 

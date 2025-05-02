@@ -27,7 +27,7 @@ void Shader::Bind() const
     glCall(glUseProgram(RendererID))
 }
 
-void Shader::Unbind()
+void Shader::Unbind() const
 {
     glCall(glUseProgram(0))
 }
@@ -51,7 +51,7 @@ unsigned Shader::CreateShader(const std::string& ShaderFilePath)
     return program;
 }
 
-unsigned Shader::CompileShader(unsigned Type, const std::string& Source)
+unsigned Shader::CompileShader(unsigned int Type, const std::string& Source)
 {
     unsigned int id = glCreateShader(Type);
     const char* src = Source.c_str();

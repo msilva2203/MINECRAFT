@@ -1,13 +1,14 @@
 ﻿#pragma once
 
 #include "Entity.h"
+#include "Framework/Debugger.h"
 
 #include "Game/ChunkManager.h"
 
 enum class EBlockType
 {
     VOID = 0,
-    DIRT
+    DIRT = 1
 };
 
 

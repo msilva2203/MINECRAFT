@@ -11,6 +11,8 @@
 #include "Rendering/VertexArray.h"
 #include "Rendering/VertexBuffer.h"
 
+#include "Statics/Types.h"
+
 #define CHUNK_SIZE       16
 #define CHUNK_HEIGHT     24
 
@@ -42,8 +44,7 @@ public:
     
 private:
     // X - Y - Z
-    Block Blocks[CHUNK_SIZE * CHUNK_HEIGHT * CHUNK_SIZE];
-    //Block Blocks[CHUNK_SIZE][CHUNK_HEIGHT][CHUNK_SIZE];
+    TArray3D<Block, CHUNK_SIZE, CHUNK_HEIGHT, CHUNK_SIZE> Blocks;
     glm::ivec2 ChunkPosition;
     
     std::vector<unsigned int> Vertex;

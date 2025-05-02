@@ -24,8 +24,20 @@ void Chunk::InitObject()
     Super::InitObject();
 
     vao = new VertexArray;
+    vao->Bind();
     vbo = new VertexBuffer(nullptr, 0);
     ibo = new IndexBuffer(nullptr, 0);
+    vao->Unbind();
+
+    uint32_t Index = 0;
+    uint32_t Size = CHUNK_SIZE * CHUNK_HEIGHT * CHUNK_SIZE;
+    while (Index < Size)
+    {
+        Blocks.At(Index).SetBlockType(EBlockType::DIRT);
+        Index++;
+    }
+
+    return;
 
     for (int x = 0; x < CHUNK_SIZE; x++)
     {
@@ -109,8 +121,7 @@ void Chunk::UpdateChunk()
 
 Block& Chunk::GetBlock(const glm::ivec3& location)
 {
-    return Blocks[location.x * CHUNK_HEIGHT * CHUNK_SIZE + location.y * CHUNK_SIZE + location.z];
-    //return Blocks[location.x][location.y][location.z];
+    return Blocks.At(location.x, location.y, location.z);
 }
 
 void Chunk::UpdateBlock(const glm::ivec3& location, const EDirection Direction)
